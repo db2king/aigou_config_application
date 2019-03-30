@@ -1,0 +1,41 @@
+spring:
+  profiles:
+    active:  dev
+---
+server:
+  port: 8002
+spring:
+  application:
+    name:  PRODUCT-SERVICE #不要使用下划线
+  profiles: dev
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/aigou
+    username: root
+    password: 123456
+mybatis-plus:
+  mapper-locations: classpath:cn/xxx/aigou/mapper/*Mapper.xml
+  type-aliases-package: cn.xxx.aigou.domain,cn.xxx.aigou.query
+eureka:
+  client:
+    service-url:
+     defaultZone: http://localhost:7001/eureka #告诉服务提供者要把服务注册到哪儿，注册中心的地址
+---
+server:
+  port: 8003
+spring:
+  application:
+    name:  PRODUCT-SERVICE-TEST #不要使用下划线
+  profiles: test
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/aigou
+    username: root
+    password: 123456
+mybatis-plus:
+  mapper-locations: classpath:cn/xxx/aigou/mapper/*Mapper.xml
+  type-aliases-package: cn.xxx.aigou.domain,cn.xxx.aigou.query
+eureka:
+  client:
+    service-url:
+     defaultZone: http://localhost:7001/eureka #告诉服务提供者要把服务注册到哪儿，注册中心的地址
