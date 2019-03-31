@@ -20,8 +20,8 @@ zuul:
   routes:
     plat.serviceId: aigou-plat  #和服务提供者的服务名一樣
     plat.path: /wg/**   #访问的时候，是/wg打开头的地址，就使用aigou-plat来响应 做映射：解决地址太长了，服务名的暴露的问题
-    plat.serviceId: product-service  #和服务提供者的服务名一樣
-    plat.path: /product/**   #访问的时候，是/wg打开头的地址，就使用aigou-plat来响应 做映射：解决地址太长了，服务名的暴露的问题
+    product.serviceId: product-service  #和服务提供者的服务名一樣
+    product.path: /product/**   #访问的时候，是/wg打开头的地址，就使用aigou-plat来响应 做映射：解决地址太长了，服务名的暴露的问题
   ignored-services: "*"   #不能直接使用服务名访问了:如果有很多，可以直接使用*忽略所有
   prefix: "/aigou"  # 前缀   http://localhost:9527/aigou/wg/user/testuser
 ---
@@ -42,7 +42,7 @@ zuul:
   routes:
     plat.serviceId: aigou-plat  #和服务提供者的服务名一樣
     plat.path: /wg/**   #访问的时候，是/wg打开头的地址，就使用aigou-plat来响应 做映射：解决地址太长了，服务名的暴露的问题
-     plat.serviceId: product-service-test  #和服务提供者的服务名一樣
-    plat.path: /product/**   #访问的时候，是/wg打开头的地址，就使用aigou-plat来响应 做映射：解决地址太长了，服务名的暴露的问题
+    product.serviceId: product-service-test  #和服务提供者的服务名一樣
+    product.path: /product/**   #访问的时候，是/wg打开头的地址，就使用aigou-plat来响应 做映射：解决地址太长了，服务名的暴露的问题
   ignored-services: "*"   #不能直接使用服务名访问了:如果有很多，可以直接使用*忽略所有
   prefix: "/aigou"  # 前缀   http://localhost:9527/aigou/wg/user/testuser
