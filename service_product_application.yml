@@ -20,6 +20,9 @@ eureka:
   client:
     service-url:
      defaultZone: http://localhost:7001/eureka #告诉服务提供者要把服务注册到哪儿，注册中心的地址
+feign:
+  hystrix:
+    enabled: true #开启断路器
 ---
 server:
   port: 8003
@@ -39,3 +42,6 @@ eureka:
   client:
     service-url:
      defaultZone: http://localhost:7001/eureka #告诉服务提供者要把服务注册到哪儿，注册中心的地址
+feign:
+  hystrix:
+    enabled: true #开启断路器
